@@ -1,0 +1,33 @@
+{
+  "name": "Alearm",
+  "description": "Alearm google chrome extension",
+  "version": "0.0.2",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "/background/background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/content/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "/popup/popup.html",
+    "default_title": "Alearm",
+    "default_icon": {
+      "16": "/icon/icon.png",
+      "24": "/icon/icon.png",
+      "32": "/icon/icon.png"
+    }
+  },
+  "icons": {
+    "128": "/icon/icon.png",
+    "16": "/icon/icon.png",
+    "256": "/icon/icon.png",
+    "48": "/icon/icon.png"
+  },
+  "options_page": "/options/options.html"
+}
